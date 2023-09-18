@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+      
+    </h:head>
+    <h:body role="document" >
+
+        <!-- DRUGACIJI MI JE IZGLED STRANICE KAD IGRAM-->
+        <ui:composition template="../templateOne.xhtml">
+
+            <ui:define name="top"></ui:define>
+
+
+            <ui:define name="content" >
+                <div id="c"  style="width:99%; ">
+                    <h1><h:outputText value="Slagalica"/></h1><hr/>
+
+
+
+
+                    <p:panel header="Izbor" style="background-color: lightgoldenrodyellow;">
+                        <p:messages autoUpdate="true"/>
+
+                        <h:form>  
+                            <h:outputLabel value="Proteklo vreme: "/>
+                            <h:outputText id="brojanje" value="#{Supervizor.counter}" />
+                            <h:outputLabel value=" /60s"/>
+                            <p:poll interval="1"  listener="#{Supervizor.odbrojavanje()}" update="brojanje" />  
+                        </h:form> 
+
+                        <br></br>
+                        <br></br>
+
+                        <h:form  >
+                            <table>
+                                <tr>
+                                    <td> IGRAC
+                                        <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                              margin-right:1000px ; width:90px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                              background-color: lightgoldenrodyellow;" >#{PojmoviSlagalicaBean.bodovi}</div>
+                                    </td>
+
+                                </tr>
+                            </table>
+
+
+
+
+
+                            <br/><br/>
+                            <div style="margin: auto; top: 40%; width: 65%;">
+                                <table >
+                                    <tr >
+
+                                        <h:outputLabel   id="test"
+                                                         value="#{PojmoviSlagalicaBean.secondsPassed}">
+                                            <!--                                                    <f:ajax event="change" render="ram" />-->
+
+                                        </h:outputLabel>
+
+                                        <!--  1. SLOVO****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(0)}"/>
+                                            </div>
+                                        </td>
+
+                                        <!-- 2. SLOVO****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(1)}"/>
+                                            </div> 
+                                        </td>
+
+                                        <!-- 3. SLOVO ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(2)}"/>
+                                            </div> 
+                                        </td>
+
+                                        <!-- 4. SLOVO ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(3)}"/>
+                                            </div> 
+                                        </td>
+
+                                        <!-- 5. SLOVO ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(4)}"/>
+                                            </div> 
+                                        </td>
+
+                                        <!-- 6.SLOVO ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(5)}"/>
+                                            </div> 
+                                        </td>
+
+                                        <!-- 7. SLOVO****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(6)}"/>
+                                            </div> 
+                                        </td>
+
+                                        <!-- 8.SLOVO ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(7)}"/>
+                                            </div> 
+                                        </td>
+
+                                        <!-- 9.SLOVO ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(8)}"/>
+                                            </div> 
+                                        </td>
+
+                                        <!-- 10.SLOVO ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(9)}"/>
+                                            </div> 
+                                        </td>
+
+                                        <!-- 11.SLOVO ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(10)}"/>
+                                            </div> 
+                                        </td>
+
+                                        <!-- 12. SLOVO ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{PojmoviSlagalicaBean.slova.get(11)}"/>
+                                            </div> 
+                                        </td>
+
+                                    </tr>
+
+                                </table>
+
+
+
+                                <BR></BR>
+                                <div align="left" style="font-family: Gill; font:normal 160%/100% fantasy ;"> 
+                                    <h:inputText size="41" value="#{PojmoviSlagalicaBean.rec}" 
+                                                 valueChangeListener="#{PojmoviSlagalicaBean.updateText}"
+                                               >
+                                        <f:ajax event="change" />
+                                        <!--<f:validateRegex pattern="(?=.*[A-Z])"/>-->
+                                    </h:inputText>
+                                </div>
+
+
+
+                                <BR></BR>
+                                <div align="left" style="font:normal 160%/100% fantasy ; text-align: center; ">
+                                    <h:commandButton value="Potvrdi" action="#{PojmoviSlagalicaBean.proveri}"></h:commandButton> &nbsp;&nbsp;
+                                    <h:commandButton value="Otkazi"></h:commandButton>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                        </h:form>
+                        <!--                        </h:panelGrid>-->
+                    </p:panel>
+
+                </div>
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+

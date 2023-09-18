@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:o="http://omnifaces.org/ui">
+    <h:head>
+    </h:head>
+    <h:body role="document">
+        <ui:composition template="../template.xhtml">
+
+            <ui:define name="top"></ui:define>
+
+            <ui:define name="left">
+                <h:form>
+                    <p:growl autoUpdate="true"/><br></br>
+                    <p:spacer></p:spacer>
+
+                    <p:panelMenu style="width:340px" >
+                        <p:submenu label="Meni" >
+                            <p:menuitem value="Pocetna strana" action="logovanje.xhtml?faces-redirect=true" icon="ui-icon-back" />
+
+                        </p:submenu>
+
+
+                    </p:panelMenu>
+                </h:form>
+            </ui:define>
+
+
+
+            <ui:define name="content">
+                <div class="container" >
+                    <div class="row">
+                        <h1><h:outputText value="Registracija"/></h1><hr/>
+
+
+                        <h:form >
+                            <p:panel header="Unesite podatke" >
+                                <p:messages autoUpdate="true"/>
+
+                                <h:panelGrid id="grid" columns="2"  cellpadding="2">
+
+                                    <h:outputLabel for="userNameReg" value="Ime"/>
+                                    <p:inputText   id="userNameReg" value="#{RegistracijaBean.name}" label="userNameReg" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje" validatorMessage="Izmedju 3 i 35 karaktera" size="19" immediate="true" >
+                                        <f:validateLength minimum="3" maximum="35"/>
+                                        <f:ajax event="blur" render="userNameRegMessage"/>
+                                    </p:inputText>
+                                    <h:message for="userNameReg" style="color: crimson" id="userNameMessage"/>
+                                    <br/>
+
+
+                                    <h:outputLabel for="userSurNameReg" value="Surname"/>
+                                    <p:inputText  id="userSurNameReg" value="#{RegistracijaBean.surname}" label="userSurNameReg" required="true" placeholder="Unesite prezime" requiredMessage="Obavezno polje" validatorMessage="Izmedju 3 i 35 karaktera" size="19" immediate="true" >
+                                        <f:validateLength minimum="3" maximum="35"/>
+                                        <f:ajax event="blur" render="userSurNameRegMessage"/>
+                                    </p:inputText>
+                                    <h:message for="userSurNameReg" style="color: crimson" id="userSurNameMessage"/>
+                                    <br/><br/>
+                                    
+
+                                 
+
+
+
+                                    <p:outputLabel for="userAirline" value="Airline: " />
+                                    <p:selectOneMenu id="userAirline" value="#{AirlineListBean.airline.name}"
+                                                     style="width:150px">
+                                        <f:selectItem itemLabel="Izaberite:" itemValue=""
+                                                      noSelectionOption="true" />
+                                        <f:selectItems value="#{AirlineListBean.lst}" var="item"
+                                                       itemValue="#{item.name}" itemLabel="#{item.name}" />
+                                    </p:selectOneMenu>
+                                    <p:message for="userAirline" display="icon" />
+                                    <br/><br/>
+
+
+
+
+
+
+
+                                    <h:outputLabel for="pol" value="Pol" />
+                                    <p:selectOneListbox id="pol" value="#{RegistracijaBean.pol}" required="true" requiredMessage="Obavezno polje" validatorMessage="Greska">
+                                        <f:selectItem itemLabel="Muski" itemValue="muski" />
+                                        <f:selectItem itemLabel="Zenski" itemValue="zenski" />
+                                        <f:validator validatorId="checkboxValidator" />
+                                        <f:ajax event="blur" render="polMessage"/>
+                                    </p:selectOneListbox><br/>
+                                    <p:spacer></p:spacer>
+
+                                    <h:outputLabel for="tipKorisnika" value="Tip korisnika" />
+                                    <p:selectOneListbox id="tipKorisnika" value="#{RegistracijaBean.tipKorisnika}" required="true" requiredMessage="Obavezno polje" validatorMessage="Greska">
+                                        <f:selectItem itemLabel="Radnik" itemValue="radnik" />
+                                        <f:selectItem itemLabel="Stujardesa" itemValue="stujardesa" />
+                                        <f:selectItem itemLabel="Pilot" itemValue="pilot" />
+                                        <f:validator validatorId="checkboxValidator" />
+                                        <f:ajax event="blur" render="tipKorisnikaMessage"/>
+                                    </p:selectOneListbox><br/>
+                                    <p:spacer></p:spacer>
+
+
+
+                                    <h:outputLabel for="userBirthDay" value="Datum rodjenja"/>
+                                    <p:inputMask  id="userBirthDay" value="#{RegistracijaBean.birthDay}" label="userBirthDay" mask="99/99/9999" required="true" placeholder="dd/mm/yyyy" requiredMessage="Obavezno polje" validatorMessage=" Korisnik nema 18 ili vise godina!"  size="19"  >
+                                        <f:convertDateTime pattern="dd/MM/yyyy"  />
+                                        <f:validator validatorId="ageValidator" />
+                                        <f:ajax event="blur" render="userBirthDayMessage"/>
+                                    </p:inputMask>
+                                    <h:message for="userBirthDay" style="color: crimson" id="userBirthDayMessage" />
+                                    <br/>
+
+
+                                    <h:outputLabel for="userEmail" value="e-mail"/>
+                                    <p:inputText  id="userEmail" label="userEmail" value="#{RegistracijaBean.email}" required="true" placeholder="example@midomain.com" requiredMessage="Obavezno polje" validatorMessage="Nije dobar format" size="19" immediate="true" >
+                                        <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                                        <f:ajax event="blur" render="userEmailMessage"/>
+                                    </p:inputText>
+                                    <h:message for="userEmail" style="color: crimson" id="userEmailMessage" />
+
+
+                                    <br/>
+
+       
+
+                                    <h:outputLabel for="korIme" value="Korisnicko ime"/>
+                                    <p:inputText   id="korIme"  value="#{RegistracijaBean.username}" label="korIme" required="true" placeholder="Unesite korisnicko ime" requiredMessage="Obavezno polje" validatorMessage="Izmedju 3 i 35 karaktera" size="19" immediate="true" >
+                                        <f:validateLength minimum="3" maximum="35"/>
+                                        <f:ajax event="blur" render="korImeMessage"/>
+                                    </p:inputText>
+                                    <h:message for="korIme" style="color: crimson" id="korImeMessage"/>
+                                    <br/>
+
+                                    <h:outputLabel for="password" value="Lozinka"/>
+                                    <p:inputText  id="password"  value="#{RegistracijaBean.password}" label="password" required="true" placeholder="Unesite lozinku" requiredMessage="Lozinka je obavezna"  size="19" immediate="true" >
+                                        <f:validateRegex pattern="^[A-Za-z]((?=.*\d)(?=(.*[a-z]){3,})(?=.*[A-Z])(?=.*[@#$%*^$!]).{8,10})" />
+
+                                        <f:ajax event="blur" render="passwordMessage"/>
+                                    </p:inputText>
+                                    <h:message for="password" style="color: crimson" id="passwordMessage" />
+
+                                    <br/>
+                                    <h:outputLabel for="password1" value="Potvrdi lozinku"/>
+                                    <p:inputText  id="password1" value="#{RegistracijaBean.password1}" label="userSurName1" required="true" placeholder="Potvrdi lozinku" requiredMessage="Potvrda lozinke je obavezna"  size="19" immediate="true" >
+                                        <f:validateRegex pattern="^[A-Za-z]((?=.*\d)(?=(.*[a-z]){3,})(?=.*[A-Z])(?=.*[@#$%*^$!]).{8,10})" />
+
+                                        <f:ajax event="blur" render="passwordMessage1"/>
+                                    </p:inputText>
+                                    <o:validateEqual id="equal" components="password password1"
+                                                     message="Passwords are not equal" showMessageFor="password1" />
+
+                                    <h:message for="password1" style="color: crimson" id="passwordMessage1"/>
+                                </h:panelGrid><br/>
+
+                                <p:commandButton value="Zahtev za registracijom" update="grid"  style="margin-right:10px"  ajax="false" action="#{RegistracijaBean.cadastrar}"/>
+                            </p:panel>
+                        </h:form>
+
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+
+
+
+

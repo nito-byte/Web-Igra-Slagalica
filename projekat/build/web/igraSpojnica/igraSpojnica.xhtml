@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <!--        <link rel="stylesheet" type="text/css" href="charactersMain.css"></link>-->
+
+
+    </h:head>
+    <h:body role="document" >
+
+        <!-- DRUGACIJI MI JE IZGLED STRANICE KAD IGRAM-->
+        <ui:composition template="../templateOne.xhtml">
+
+            <ui:define name="top"></ui:define>
+
+
+            <ui:define name="content" >
+                <div id="c"  style="width:99%; ">
+                    <h1><h:outputText value="Spojnica"/></h1><hr/>
+
+
+                    <p:panel header=" " style="background-color: lightgoldenrodyellow;">
+                        <p:messages autoUpdate="true"/>
+
+                        <h:form>  
+                            <h:outputLabel value="Proteklo vreme: "/>
+                            <h:outputText id="brojanje" value="#{Supervizor.counter}" />
+                            <h:outputLabel value=" /60s"/>
+                            <p:poll interval="1"  listener="#{Supervizor.odbrojavanjeSpojnica()}" update="brojanje" />  
+                        </h:form> 
+
+                        <br></br>
+                        <br></br>
+
+
+
+
+                        <h:form id="ram">
+                            <table>
+                                <tr>
+                                    <td> PLAVI
+                                        <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                              margin-right:1000px ; width:90px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                              background-color: lightgoldenrodyellow;" >#{PojmoviSpojnicaBean.osvojeniBodovi}</div>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+
+
+
+                            <br/><br/>
+                            <div style="margin: auto; top: 30%; width: 60%;">
+                                <table style="float: left;" >
+
+                                    <!--  1. SLOVO****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaL(0)};" >
+
+                                                <h:outputLabel  value="#{PojmoviSpojnicaBean.mylist1.get(0)}"/>
+
+
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- 2. SLOVO****************************************** -->
+
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaL(1)};" >
+
+                                                <h:outputLabel  value="#{PojmoviSpojnicaBean.mylist1.get(1)}"/>
+
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 3. SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaL(2)};" >
+
+                                                <h:outputLabel  value="#{PojmoviSpojnicaBean.mylist1.get(2)}"/>
+
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 4. SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaL(3)};" >
+
+
+                                                <h:outputLabel  value="#{PojmoviSpojnicaBean.mylist1.get(3)}"/>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 5. SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaL(4)};" > 
+
+                                                <h:outputLabel  value="#{PojmoviSpojnicaBean.mylist1.get(4)}"/>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 6.SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaL(5)};" >
+
+                                                <h:outputLabel  value="#{PojmoviSpojnicaBean.mylist1.get(5)}"/>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 7. SLOVO****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaL(6)};" >
+
+                                                <h:outputLabel  value="#{PojmoviSpojnicaBean.mylist1.get(6)}"/>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 8.SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaL(7)};" >
+
+                                                <h:outputLabel  value="#{PojmoviSpojnicaBean.mylist1.get(7)}"/>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 9.SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaL(8)};" >
+
+                                                <h:outputLabel  value="#{PojmoviSpojnicaBean.mylist1.get(8)}"/>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 10.SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaL(9)};" >
+
+                                                <h:outputLabel  value="#{PojmoviSpojnicaBean.mylist1.get(9)}"/>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0 200px 5 100px;" ></td>
+                                    </tr>
+                                </table>
+
+
+                                <table style="display: inline-block;">
+
+                                    <!--  1. SLOVO****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaR(0)};" >
+
+                                                <h:outputLabel  
+                                                    value="#{PojmoviSpojnicaBean.mylist2.get(0)}">
+                                                    <f:ajax event="click" render="ram" listener="#{PojmoviSpojnicaBean.comparisonItems(0)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 2. SLOVO****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaR(1)};" >
+
+                                                <h:outputLabel  
+                                                    value="#{PojmoviSpojnicaBean.mylist2.get(1)}">
+                                                    <f:ajax event="click" render="ram" listener="#{PojmoviSpojnicaBean.comparisonItems(1)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+
+                                    </tr>
+                                    <!-- 3. SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div id="r3" style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                 width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                 background-color: #{PojmoviSpojnicaBean.bojaR(2)};" >
+
+                                                <h:outputLabel  
+                                                    value="#{PojmoviSpojnicaBean.mylist2.get(2)}">
+                                                    <f:ajax event="click" render="ram" listener="#{PojmoviSpojnicaBean.comparisonItems(2)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 4. SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div id="r4"  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                 width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                 background-color: #{PojmoviSpojnicaBean.bojaR(3)};" >
+
+                                                <h:outputLabel  
+                                                    value="#{PojmoviSpojnicaBean.mylist2.get(3)}">
+                                                    <f:ajax event="click" render="ram" listener="#{PojmoviSpojnicaBean.comparisonItems(3)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 5. SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div   style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                   width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                   background-color: #{PojmoviSpojnicaBean.bojaR(4)}" >
+
+                                                <h:outputLabel  
+                                                    value="#{PojmoviSpojnicaBean.mylist2.get(4)}">
+                                                    <f:ajax event="click" render="ram" listener="#{PojmoviSpojnicaBean.comparisonItems(4)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 6.SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaR(5)};" >
+
+                                                <h:outputLabel  
+                                                    value="#{PojmoviSpojnicaBean.mylist2.get(5)}">
+                                                    <f:ajax event="click" render="ram" listener="#{PojmoviSpojnicaBean.comparisonItems(5)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 7. SLOVO****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div   style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                   width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                   background-color: #{PojmoviSpojnicaBean.bojaR(6)};" >
+
+                                                <h:outputLabel  
+                                                    value="#{PojmoviSpojnicaBean.mylist2.get(6)}">
+                                                    <f:ajax event="click" render="ram" listener="#{PojmoviSpojnicaBean.comparisonItems(6)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 8.SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                  width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: #{PojmoviSpojnicaBean.bojaR(7)};" >
+
+                                                <h:outputLabel  
+                                                    value="#{PojmoviSpojnicaBean.mylist2.get(7)}">
+                                                    <f:ajax event="click" render="ram" listener="#{PojmoviSpojnicaBean.comparisonItems(7)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 9.SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div   style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                   width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                   background-color: #{PojmoviSpojnicaBean.bojaR(8)};" >
+
+                                                <h:outputLabel  
+                                                    value="#{PojmoviSpojnicaBean.mylist2.get(8)}">
+                                                    <f:ajax event="click" render="ram" listener="#{PojmoviSpojnicaBean.comparisonItems(8)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                    <!-- 10.SLOVO ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div   style="backface-visibility: visible; font-family: Gill; font:normal 160%/120% fantasy ; 
+                                                   width:320px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                   background-color: #{PojmoviSpojnicaBean.bojaR(9)}" >
+
+                                                <!--                                                <h:outputLabel  id ="9"
+                                                                                                                value="#{PojmoviSpojnicaBean.mylist2.get(9)}"
+                                                                                                                onclick="#{PojmoviSpojnicaBean.comparisonItems()}"
+                                                                                                                binding="#{PojmoviSpojnicaBean.tekuciElem}"/>-->
+
+                                                <h:outputLabel  
+                                                    value="#{PojmoviSpojnicaBean.mylist2.get(9)}">
+                                                    <f:ajax event="click" render="ram" listener="#{PojmoviSpojnicaBean.comparisonItems(9)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+
+
+                            </div>
+
+                            <!-- ovo mi treba da bi se postavilo na prazno pre nego sto se ode dalje
+                              da se igra, jer inace u unosSpojnice ce biti zapamcene te vrednosti-->
+                            <h:commandButton  value="Dalje" action="/igraAsocijacije/igraDanaAsocijacija"/>
+
+
+                        </h:form>
+                        <!--                        </h:panelGrid>-->
+                    </p:panel>
+
+                </div>
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+

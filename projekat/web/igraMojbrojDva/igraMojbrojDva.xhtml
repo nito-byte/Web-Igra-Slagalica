@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="charactersMain.css"></link>
+
+
+    </h:head>
+    <h:body role="document" >
+
+        <!-- DRUGACIJI MI JE IZGLED STRANICE KAD IGRAM-->
+        <ui:composition template="../templateOne.xhtml">
+
+            <ui:define name="top"></ui:define>
+
+
+            <ui:define name="content" >
+                <div id="c"  style="width:99%; ">
+                    <h1><h:outputText value="Moj Broj"/></h1><hr/>
+
+
+                    <p:panel header=" " style="background-color: lightgoldenrodyellow;">
+                        <p:messages autoUpdate="true"/>
+
+                        <h:form>  
+                            <h:outputLabel value="Proteklo vreme: "/>
+                            <h:outputText id="brojanje" value="#{SupervizorDva.counterMojbroj}" />
+                            <h:outputLabel value=" /60s"/>
+                            <p:poll interval="1"  listener="#{SupervizorDva.odbrojavanjeMojBroj()}" update="brojanje" />  
+                        </h:form> 
+
+                        <br></br>
+                        <br></br>
+
+
+
+                        <h:form id="ram">
+                            <table>
+                                <tr>
+                                    <td> PLAVI
+                                        <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                              margin-right:1000px ; width:90px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                              background-color: lightgoldenrodyellow;" >#{MojBrojBeanDva.osvojeniBodovi}</div>
+                                    </td>
+
+                                </tr>
+                            </table>
+
+
+
+
+
+                            <br/><br/>
+
+                            <!-- Trazeni broj   *********************************************************-->
+                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                  margin-left:550px ;width:90px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                  background-color: lightgoldenrodyellow;" >
+
+                                <h:outputLabel  value="#{MojBrojBeanDva.trazeniBroj}"/>
+
+
+
+                            </div>
+
+
+
+                            <!-- Ponudjeni broj   *********************************************************-->
+                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                  margin-left:350px ;width:90px; height:50px;text-align: center;border-color: darkgray;
+                                  background-color: lightgoldenrodyellow;" >
+                                <h:inputText  value="#{MojBrojBeanDva.ponudjeniBroj}" rendered="#{(MojBrojBeanDva.potvrdjeno eq false)}"/>
+                                <h:outputText value="#{MojBrojBeanDva.ponudjeniBroj}" rendered="#{(MojBrojBeanDva.potvrdjeno eq true)}"/>
+                                
+<!--                                <h:selectBooleanCheckbox value="#{MojBrojBeanDva.potvrdjeno}"/>-->
+                                
+                                
+<!--                                <h:inputText  value="#{MojBrojBeanDva.ponudjeniBrojCrveni}" rendered="#{(MojBrojBeanDva.potvrdjenoCrveni eq false)and(MojBrojBeanDva.crveniIgr eq 1)}"/>
+                                <h:outputText value="#{MojBrojBeanDva.ponudjeniBrojCrveni}" rendered="#{(MojBrojBeanDva.potvrdjenoCrveni eq true)and(MojBrojBeanDva.crveniIgr eq 1)}"/>
+                            -->
+                            </div>
+
+
+
+
+
+
+
+                            <div style="margin: auto; top: 40%; width: 65%;">
+                                <table >
+                                    <tr >
+
+                                        <!-- Jednocifreni_1  ****************************************** -->
+
+                                        <td>
+
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{MojBrojBeanDva.znaci(0)}" >
+
+                                                <h:outputLabel  value="#{MojBrojBeanDva.jednocifreni.get(0)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBeanDva.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+
+                                            </div>
+
+                                        </td>
+
+                                        <!-- Jednocifreni_2   ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{MojBrojBeanDva.znaci(1)}" >
+
+                                                <h:outputLabel  value="#{MojBrojBeanDva.jednocifreni.get(1)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBeanDva.dohvatiJednocifreni(1)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+
+                                        <!-- Jednocifreni_3   ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{MojBrojBeanDva.znaci(2)}" >
+
+                                                <h:outputLabel  value="#{MojBrojBeanDva.jednocifreni.get(2)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBeanDva.dohvatiJednocifreni(2)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+
+                                        <!-- Jednocifreni_4   ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;pointer-events:#{MojBrojBeanDva.znaci(3)}" >
+
+                                                <h:outputLabel  value="#{MojBrojBeanDva.jednocifreni.get(3)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBeanDva.dohvatiJednocifreni(3)}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+
+                                        <!-- ****************************************** -->
+
+                                        <td style="padding:0 47px 0 47px;" ></td>
+
+                                        <!-- Dvocifreni ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:90px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;pointer-events:#{MojBrojBeanDva.znaci(4)}" >
+
+                                                <h:outputLabel  value="#{MojBrojBeanDva.dvocifreni}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBeanDva.dohvatiDvocifreni()}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+
+                                        <!-- ****************************************** -->
+
+                                        <td style="padding:0 80px 0 80px;" ></td>
+
+                                        <!-- Trocifreni  ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:110px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{MojBrojBeanDva.znaci(5)}" >
+
+                                                <h:outputLabel  value="#{MojBrojBeanDva.trocifreni}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBeanDva.dohvatiTrocifreni()}"/>
+                                                </h:outputLabel>
+
+                                            </div> 
+                                        </td>
+                                        &nbsp;&nbsp;
+                                    </tr>
+
+
+
+                                </table>
+
+                                <!-- Algebarske operacije  ****************************************** -->
+                                <table>
+                                    <tr>
+
+                                        <!-- ****************************************** -->
+                                        <td style="padding:0 115px 0 115px;" ></td>
+
+                                        <!-- Plus  ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;pointer-events:#{MojBrojBeanDva.znaci(6)}" >
+
+                                                <h:outputLabel  value="+">
+                                                    <f:ajax event="click" render="ram" 
+                                                            listener=
+                                                            "#{MojBrojBeanDva.dohvatiOperaciju('+')}"></f:ajax>
+                                                </h:outputLabel>
+
+                                            </div>
+                                        </td>
+
+                                        <!-- Minus   ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;pointer-events:#{MojBrojBeanDva.znaci(7)}" >
+
+                                                <h:outputLabel  value="-">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBeanDva.dohvatiOperaciju('-')}"/>
+                                                </h:outputLabel>
+                                            </div>
+                                        </td>
+
+                                        <!-- Mnozi   ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{MojBrojBeanDva.znaci(8)}" >
+
+                                                <h:outputLabel  value="*">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBeanDva.dohvatiOperaciju('*')}"/>
+                                                </h:outputLabel>
+                                            </div>
+                                        </td>
+
+                                        <!-- Deli   ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{MojBrojBeanDva.znaci(9)}" >
+
+
+                                                <h:outputLabel  value="/">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBeanDva.dohvatiOperaciju('/')}"/>
+                                                </h:outputLabel>
+                                            </div>
+                                        </td>
+
+                                        <!-- Leva zagrada   ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{MojBrojBeanDva.znaci(10)}" >
+
+
+                                                <h:outputLabel  value="(">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBeanDva.dohvatiOperaciju('(')}"/>
+                                                </h:outputLabel>
+                                            </div>
+                                        </td>
+
+                                        <!-- Desna zagrada   ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;pointer-events:#{MojBrojBeanDva.znaci(11)}" >
+
+                                                <h:outputLabel  value=")">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBeanDva.dohvatiOperaciju(')')}"/>
+                                                </h:outputLabel>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+
+
+                                <BR></BR>
+                                <!--                                <div align="left" style="font-family: Gill; font:normal 160%/100% fantasy ;"> -->
+                                <div align="left" style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                     width:728px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                     background-color: lightgoldenrodyellow;" >
+                                    <h:outputText  value="#{MojBrojBeanDva.resenje}"/>
+                                </div>
+
+
+
+                                <BR></BR>
+                                <div align="left" style="font:normal 160%/100% fantasy ; text-align: center; ">
+                                    <h:commandButton value="Proveri ponudjeni" action="#{MojBrojBeanDva.izracunajResenje}"></h:commandButton> &nbsp;&nbsp;
+                                    <!--                                    <h:commandButton value=" Dalje "></h:commandButton>-->
+
+<!--                                    <h:commandButton value="Potvrdi Plavi" action="#{MojBrojBeanDva.potvrdiPlavi()}"  rendered="#{(MojBrojBeanDva.plaviIgr eq 1)}" />
+                                    <h:commandButton value="Potvrdi Crveni" action="#{MojBrojBeanDva.potvrdiCrveni()}"  rendered="#{(MojBrojBeanDva.crveniIgr eq 1)}" />-->
+
+                                </div>
+
+
+
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                        </h:form>
+                        <!--                        </h:panelGrid>-->
+                    </p:panel>
+
+                </div>
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+

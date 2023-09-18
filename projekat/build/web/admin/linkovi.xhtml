@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        
+    </h:head>
+    <h:body role="document">
+
+        <ui:composition template="../template.xhtml">
+
+            <ui:define name="top"></ui:define>
+
+            <ui:define name="left">
+                <h:form>
+                    <p:growl autoUpdate="true"/><br></br>
+                    <p:spacer></p:spacer>
+
+                    <p:panelMenu style="width:340px" >
+                        <p:submenu label="Meni" >
+                            <p:menuitem value="Izloguj se" action="#{UcesnikBean.logout()}" icon="ui-icon-back" />
+                             </p:submenu>
+
+
+                    </p:panelMenu>
+                </h:form>
+            </ui:define>
+            <ui:define name="content">
+                <div class="container">
+                    <h1><h:outputText value="Administrator"/></h1><hr/>
+
+
+                    <p:spacer height="35" />
+
+                    <p:panel header="Izbor">
+                        <p:messages autoUpdate="true"/>
+
+                        <h:panelGrid id="grid" columns="4" cellpadding="5">
+                            <h:form>
+                                <p:growl id="growl" life="2000" />
+
+                                <p:commandLink id="ajax1" style="font-weight:bold" ajax="false" update="growl" action="listRegistracija?faces-redirect=true"  >
+                                    <h:outputText value="Administriranje korisnickih naloga" />
+                                </p:commandLink>
+                                <br/><br/>
+                                
+                                <p:commandLink id="ajax2" style="font-weight:bold" ajax="false" update="growl" action="igraDana?faces-redirect=true"  >
+                                    <h:outputText value="Administriranje igre dana" />
+                                </p:commandLink>
+                                <br/><br/>
+                                
+                                <p:commandLink id="ajax3" style="font-weight:bold" ajax="false" update="growl" action="#{IgraDana.postojiIgraDanaINijeOdigrana()}"  >
+                                    <h:outputText value="Azuriranje igre dana" />
+                                </p:commandLink>
+                                <br/><br/>
+                                
+
+<!--                                <p:commandLink id="ajax2"  style="font-weight:bold"  ajax="false" action="addAirport.xhtml?faces-redirect=true">
+                                    <h:outputText value="Dodajte novi aerodrom" />
+                                </p:commandLink>
+                                <br/><br/>
+
+                                <p:commandLink id="ajax3" style="font-weight:bold"  ajax="false" action="/airline/addAirline.xhtml?faces-redirect=true">
+                                    <h:outputText value="Dodajte novu avio kompaniju" />
+                                </p:commandLink><br/><br/>
+
+                                <p:commandLink id="ajax4" style="font-weight:bold"  ajax="false" action="/airline/listAirline.xhtml?faces-redirect=true">
+                                    <h:outputText value="Promeni podatke o avio kompaniji" />
+                                </p:commandLink><br/><br/>
+
+
+                                <p:commandLink id="ajax5" style="font-weight:bold" update="growl"  ajax="false" action="listLicenca.xhtml?faces-redirect=true">
+                                    <h:outputText value="Dodajte pilotu novu licencu" />
+                                </p:commandLink>
+                                <br/><br/>
+
+                                <p:commandLink id="ajax6" style="font-weight:bold" update="growl" ajax="false" action="/avion/addAvion.xhtml?faces-redirect=true">
+                                    <h:outputText value="Dodajte novi avion" />
+                                </p:commandLink>
+                                <br/><br/>
+
+
+
+                                <p:commandLink id="ajax7" style="font-weight:bold" update="growl" ajax="false" action=".xhtml?faces-redirect=true" >
+                                    <h:outputText value="Dodajte novi let" />
+                                </p:commandLink>
+                                <br/><br/>-->
+
+
+
+                            </h:form>
+
+                        </h:panelGrid>
+                    </p:panel>
+
+
+
+                </div>
+
+
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 6, 2019 6:11:43 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.PredjiDalje" table="PredjiDalje" catalog="let1" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="plavi" type="string">
+            <column name="plavi" length="45" />
+        </property>
+        <property name="crveni" type="string">
+            <column name="crveni" length="45" />
+        </property>
+        <property name="mojBrojPlavi" type="java.lang.Integer">
+            <column name="mojBrojPlavi" />
+        </property>
+        <property name="mojBrojCrveni" type="java.lang.Integer">
+            <column name="mojBrojCrveni" />
+        </property>
+        <property name="spojnicaPlavi" type="java.lang.Integer">
+            <column name="spojnicaPlavi" />
+        </property>
+        <property name="spojnicaCrveni" type="java.lang.Integer">
+            <column name="spojnicaCrveni" />
+        </property>
+        <property name="asocijacijaPlavi" type="java.lang.Integer">
+            <column name="asocijacijaPlavi" />
+        </property>
+        <property name="asocijacijaCrveni" type="java.lang.Integer">
+            <column name="asocijacijaCrveni" />
+        </property>
+    </class>
+</hibernate-mapping>

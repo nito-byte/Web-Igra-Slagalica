@@ -1,0 +1,51 @@
+-- MySQL dump 10.13  Distrib 5.7.26, for Linux (x86_64)
+--
+-- Host: 127.0.0.1    Database: let1
+-- ------------------------------------------------------
+-- Server version	5.7.26-0ubuntu0.16.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `Gramatika`
+--
+
+DROP TABLE IF EXISTS `Gramatika`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Gramatika` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ispravnaRec` varchar(45) COLLATE latin2_croatian_ci DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=latin2 COLLATE=latin2_croatian_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Gramatika`
+--
+
+LOCK TABLES `Gramatika` WRITE;
+/*!40000 ALTER TABLE `Gramatika` DISABLE KEYS */;
+INSERT INTO `Gramatika` VALUES (1,'MIKI'),(2,'DVA'),(3,'TRI'),(4,'PET'),(5,'UHO'),(6,'OPA'),(7,'HOP'),(8,'CEV'),(9,'NOV'),(10,'ŠUT'),(11,'TZV'),(12,'VRH'),(13,'KRV'),(14,'MIR'),(15,'PDV'),(16,'BUĐ'),(17,'SOJ'),(18,'UNA'),(19,'UŽE'),(20,'VOD'),(21,'RUŽ'),(22,'LIM'),(23,'DNO'),(24,'KIČ'),(25,'VAS'),(26,'CIA'),(27,'MOL'),(28,'REP'),(29,'RIS'),(30,'ALT'),(31,'DUŽ'),(32,'REZ'),(33,'LOM'),(34,'SIN'),(35,'OKO'),(36,'DŽEP'),(37,'ZEC'),(38,'VIC'),(39,'KOZA'),(40,'VATA'),(41,'GLUV'),(42,'ŽILA'),(43,'KROV'),(44,'KAFE'),(45,'JAJA'),(46,'LOTO'),(47,'SALA'),(48,'PRAH'),(49,'NANE'),(50,'ISTO'),(51,'SEKA'),(52,'GNEV'),(53,'ISTA'),(54,'SUZE'),(55,'SRAM'),(56,'ZMAJ'),(57,'LETO'),(58,'KLON'),(59,'LOZA'),(60,'MILE'),(61,'IDEM'),(62,'RADI'),(63,'NEMA'),(64,'JESI'),(65,'ČETA'),(66,'REKE'),(67,'PIĆE'),(68,'FRAK'),(69,'CENE'),(70,'IRAK'),(71,'KUME'),(72,'TIHI'),(73,'DEDE'),(74,'ŠARE'),(75,'HROM'),(76,'SILE'),(77,'CREP'),(78,'LOGO'),(79,'TEBE'),(80,'UGAO'),(81,'BRDO'),(82,'KNEZ'),(83,'OVCA'),(84,'ŠALA'),(85,'NETO'),(86,'ZANEO'),(87,'SURLA'),(88,'ZAPAD'),(89,'LEDEN'),(90,'ARENE'),(91,'IMATE'),(92,'VEGAN'),(93,'IZVOZ'),(94,'MAŠNE'),(95,'FLORA'),(96,'PRODA'),(97,'KVOTA'),(98,'TAJNI'),(99,'SKUPA'),(100,'KOLAČ'),(101,'BUDNO'),(102,'KLICA'),(103,'VAGON'),(104,'BINGO'),(107,'MORAVA'),(108,'DRINA'),(109,'DUNAV'),(112,'DRVO'),(113,'ZEMLJA'),(114,'DUBROVNIK'),(115,'LIVADA'),(116,'ANTIBIOTIK');
+/*!40000 ALTER TABLE `Gramatika` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-07-09 16:08:15

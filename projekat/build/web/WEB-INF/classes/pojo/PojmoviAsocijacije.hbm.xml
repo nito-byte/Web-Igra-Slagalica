@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 6, 2019 6:11:43 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.PojmoviAsocijacije" table="PojmoviAsocijacije" catalog="let1" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="a1" type="string">
+            <column name="A1" length="45" />
+        </property>
+        <property name="a2" type="string">
+            <column name="A2" length="45" />
+        </property>
+        <property name="a3" type="string">
+            <column name="A3" length="45" />
+        </property>
+        <property name="a4" type="string">
+            <column name="A4" length="45" />
+        </property>
+        <property name="b1" type="string">
+            <column name="B1" length="45" />
+        </property>
+        <property name="b2" type="string">
+            <column name="B2" length="45" />
+        </property>
+        <property name="b3" type="string">
+            <column name="B3" length="45" />
+        </property>
+        <property name="b4" type="string">
+            <column name="B4" length="45" />
+        </property>
+        <property name="v1" type="string">
+            <column name="V1" length="45" />
+        </property>
+        <property name="v2" type="string">
+            <column name="V2" length="45" />
+        </property>
+        <property name="v3" type="string">
+            <column name="V3" length="45" />
+        </property>
+        <property name="v4" type="string">
+            <column name="V4" length="45" />
+        </property>
+        <property name="g1" type="string">
+            <column name="G1" length="45" />
+        </property>
+        <property name="g2" type="string">
+            <column name="G2" length="45" />
+        </property>
+        <property name="g3" type="string">
+            <column name="G3" length="45" />
+        </property>
+        <property name="g4" type="string">
+            <column name="G4" length="20" />
+        </property>
+        <property name="kolA" type="string">
+            <column name="kolA" length="20" />
+        </property>
+        <property name="kolB" type="string">
+            <column name="kolB" length="20" />
+        </property>
+        <property name="kolV" type="string">
+            <column name="kolV" length="20" />
+        </property>
+        <property name="kolG" type="string">
+            <column name="kolG" length="20" />
+        </property>
+        <property name="konacno" type="string">
+            <column name="konacno" length="20" />
+        </property>
+        <property name="sifra" type="java.lang.Integer">
+            <column name="sifra" />
+        </property>
+    </class>
+</hibernate-mapping>

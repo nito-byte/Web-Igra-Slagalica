@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+    </h:head>
+    <h:body role="document">
+        <ui:composition template="../templateNaslovna.xhtml">
+
+            <ui:define name="top"></ui:define>
+
+            <ui:define name="naslov>">
+                <div class="row1">
+
+                    <h1><h:outputText value="&nbsp;Dobrodosli!" styleClass="menu"/></h1><hr/>
+                </div>
+            </ui:define>
+
+
+            <ui:define name="left">
+
+                <h:form>
+
+
+                    <p:dataTable var="item" value="#{FlightListBean.lst1}" rows="10" 
+                                 paginator="true" rowsPerPageTemplate="5,15,20"
+                                 scrollable="true" scrollWidth="900" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+                        <p:column headerText="BrojLeta">
+                            <h:outputText value="#{item.brojLeta}" />
+                        </p:column>
+
+                        <p:column headerText="Polaziste">
+                            <h:outputText value="#{item.airportFrom}" />
+                        </p:column>
+
+                        <p:column headerText="Odrediste">
+                            <h:outputText value="#{item.airportTo}" />
+                        </p:column> 
+
+
+
+                        <p:column headerText="Vreme polaska">
+                            <h:outputText value="#{item.start}" />
+                        </p:column>
+                        
+                        <p:column headerText="Trajanje leta">
+                            <h:outputText value="#{item.time}" />
+                        </p:column>
+                        
+                        <p:column headerText="Ocekivano vreme">
+                            <h:outputText value="#{item.ocekivanoVreme}" />
+                        </p:column>
+                        
+                        <p:column headerText="Kompanija">
+                            <h:outputText value="#{item.avioKompanija}" />
+                        </p:column>
+
+
+                    </p:dataTable>
+                </h:form>
+
+
+            </ui:define>
+
+
+
+
+
+
+
+
+            <ui:define name="content">
+
+
+
+
+
+                <h:form>
+                    <p:panelMenu style="width:300px" >
+                        <p:submenu label="Prijava" >
+                            <p:menuitem value="Prijavite se na sistem"  ajax="false" action="prijava.xhtml?faces-redirect=true" icon="ui-icon-arrow-r"  />
+
+                        </p:submenu>
+
+
+                    </p:panelMenu>
+
+                    <p:panelMenu style="width:300px" >
+                        <p:submenu label="Registracija" >
+                            <p:menuitem value="Registrujte se na sistem" ajax="false" action="registracija.xhtml?faces-redirect=true" icon="ui-icon-arrow-r" />
+
+                        </p:submenu>
+
+
+                    </p:panelMenu>
+                    <p:panelMenu style="width:300px" >
+                        <p:submenu label="Lozinka" >
+                            <p:menuitem value="Promenite lozinku" ajax="false" action="promenaLozinke.xhtml?faces-redirect=true" icon="ui-icon-arrow-r" />
+
+                        </p:submenu>
+
+
+                    </p:panelMenu>
+
+
+
+                    <p:panelMenu style="width:300px" >
+                        <p:submenu label="Pretraga letova" >
+                            <p:menuitem value="Pretraga letova za neregistrovane korisnike" ajax="false" action="/gost/forma.xhtml?faces-redirect=true" icon="ui-icon-arrow-r" />
+
+                        </p:submenu>
+
+
+                    </p:panelMenu>
+
+
+
+
+                    <p:panelMenu style="width:300px" >
+                        <p:submenu label="Danasnji letovi" >
+                            <p:menuitem value="Tabela danasnjih letova" ajax="false" action="/naslovna/danasnjiLetovi.xhtml?faces-redirect=true" icon="ui-icon-arrow-r" />
+
+                        </p:submenu>
+
+
+                    </p:panelMenu>
+
+
+
+                </h:form> 
+
+
+
+
+
+
+
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+

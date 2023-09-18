@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="charactersMain.css"></link>
+
+
+    </h:head>
+    <h:body role="document" >
+
+        <!-- DRUGACIJI MI JE IZGLED STRANICE KAD IGRAM-->
+        <ui:composition template="../templateOne.xhtml">
+
+            <ui:define name="top"></ui:define>
+
+
+            <ui:define name="content" >
+                <div id="c"  style="width:99%; ">
+                    <h1><h:outputText value="Asocijacija"/></h1><hr/>
+
+
+                    <p:panel header=" " style="background-color: lightgoldenrodyellow;">
+                        <p:messages autoUpdate="true"/>
+
+
+
+                        <h:form>
+                            <table>
+                                <tr>
+                                    <td> PLAVI
+                                        <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                              margin-right:1000px ; width:90px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                              background-color: lightgoldenrodyellow;" >a</div>
+                                    </td>
+                                    <td> CRVENI
+                                        <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                              alignment-adjust: central; width:90px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                              background-color: lightgoldenrodyellow;" >a</div>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+
+
+                            <div style="margin: auto; top: 40%; width: 58%;">
+                                <table  style="float: left;" >
+                                    <tr  >
+
+                                        <!--  A1  ****************************************** -->
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaA(0)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    <!--   A2   ****************************************** -->
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaA(1)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+
+                                    <!--   A3   ****************************************** -->
+                                    <tr>   
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaA(2)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr> 
+
+
+                                    <!--   A4   ****************************************** -->
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaA(3)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+                                    <!--   kolonaA  ****************************************** -->
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" ><h:inputText size="15" style="text-align: center; background:transparent; border:none;"></h:inputText></div> 
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                                <!--   B1  ****************************************** -->
+                                <table  style="display: inline-block;" >
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaB(0)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+                                    <!--   B2   ****************************************** -->
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaB(1)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+                                    <!--   B3   ****************************************** -->
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaB(2)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+                                    <!--   B4   ****************************************** -->
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaB(3)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+                                    <!-- kolonaB ****************************************** -->
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" ><h:inputText size="15" style="text-align: center; background:transparent; border:none;height:39px;"></h:inputText></div> 
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+
+
+                                <!--                                <BR></BR>-->
+                                <div align="left" style="font-family: Gill; font:normal 170%/100% fantasy ;"> 
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <h:inputText size="26" style="height: 30px; text-align: center" ></h:inputText>
+                                </div>
+
+
+
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div style="margin-left: 200px; font-family: Gill; font:normal 170%/100% fantasy ;"> 
+                                                <h:commandButton style="height: 36px; font-size: 29px" value="Potvrdi"/>
+                                            </div>&nbsp;
+                                        </td>
+
+                                        <td>
+                                            <div style="margin-left: 10px;font-family: Gill; font:normal 170%/100% fantasy ;"> 
+                                                <h:commandButton style="height: 36px; font-size: 29px" value=" Dalje "/>
+                                            </div>&nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table  style="float: left;" >
+                                    <tr  >
+
+                                        <!--     ****************************************** -->
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" ><h:inputText size="15" style="text-align: center; background:transparent; border:none;height:39px;"></h:inputText></div> 
+                                        </td>
+
+
+
+                                    </tr>
+                                    <!--  V4   ****************************************** -->
+
+                                    <tr >
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaV(3)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+                                    <!--  V3    ****************************************** -->
+                                    <tr>   
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaV(2)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr> 
+                                    <!--  V2    ****************************************** -->
+
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaV(1)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+                                    <!--  V1   ****************************************** -->
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaV(0)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table  style="display: inline-block;" >
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" ><h:inputText size="15" style="text-align: center; background:transparent; border:none;height:39px;"></h:inputText></div> 
+                                        </td>
+                                    </tr>
+
+                                    <!--   G4  ****************************************** -->
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaG(3)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+                                    <!--  G3   ****************************************** -->
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaG(2)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+                                    <!--   G2   ****************************************** -->
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaG(1)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+                                    <!--   G0    ****************************************** -->
+                                    <tr>
+
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 170%/120% fantasy ; 
+                                                  width:305px; height:30px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow;" >
+
+                                                <h:outputLabel  value="#{AsocijacijaBean.kolonaG(0)}">
+                                                    <f:ajax event="click" render="ram" listener="#{MojBrojBean.dohvatiJednocifreni(0)}"/>
+                                                </h:outputLabel>
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </h:form>
+                    </p:panel>
+                </div>
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+

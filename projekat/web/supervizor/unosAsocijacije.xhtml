@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:o="http://omnifaces.org/ui">
+    <h:head>
+    </h:head>
+    <h:body role="document">
+        <ui:composition template="../template.xhtml">
+
+            <ui:define name="top"></ui:define>
+
+            <ui:define name="left">
+                <h:form>
+                    <p:growl autoUpdate="true"/><br></br>
+                    <p:spacer></p:spacer>
+
+                    <p:panelMenu style="width:340px" >
+                        <p:submenu label="Meni" >
+                            <p:menuitem value="Izloguj se" action="#{UcesnikBean.logout()}" icon="ui-icon-back" />
+                            <p:menuitem value="Povratak" action="linkovi.xhtml?faces-redirect=true" icon="ui-icon-back" />
+                        </p:submenu>
+                    </p:panelMenu>
+                </h:form>
+            </ui:define>
+
+
+
+            <ui:define name="content">
+
+                <h:form >
+                    <p:menubar >
+
+                        <p:menuitem value="Slagalica" icon="ui-icon-circle-plus" ajax="true"  url="unosSlagalica.xhtml"/>
+                        <p:menuitem value="Spojnica" icon="ui-icon-circle-plus" ajax="true"  url="unosSpojnica.xhtml"/>
+                        <p:menuitem value="Asocijacije" icon="ui-icon-circle-plus" ajax="true"  url="unosAsocijacije.xhtml"/>
+
+                    </p:menubar>
+                </h:form>
+
+
+                <div class="container" >
+                    <div class="row">
+
+
+                        <h:form >
+                            <p:panel header="Unesite podatke" style="height:1000px"  >
+                                <!--                                <p:messages autoUpdate="true"/>-->
+
+                                <h:panelGrid id="grid" columns="2" cellpadding="3"  >
+                                    <h:panelGroup>
+                                        <p:panel style="height:370px" >
+                                            <h:outputLabel for="fieldsA1" value="A1:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_A1" value="#{PojmoviAsocijacijeBean.a1}" label="word_A1" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje A1"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_A1Message"/>
+                                            </p:inputText>
+                                            <h:message for="fieldsA1" style="color: crimson" id="fieldsA1Message"/>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsA2" value="A2:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_A2" value="#{PojmoviAsocijacijeBean.a2}" label="word_A2" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje A2"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_A2Message"/>
+                                            </p:inputText>
+                                            <h:message for="fieldsA2" style="color: crimson" id="fieldsA2Message"/>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsA3" value="A3:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_A3" value="#{PojmoviAsocijacijeBean.a3}" label="word_A3" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje A3"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_A3Message"/>
+                                            </p:inputText>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsA4" value="A4:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_A4" value="#{PojmoviAsocijacijeBean.a4}" label="word_A4" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje A4"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_A4Message"/>
+                                            </p:inputText>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsKolA" value="KolA:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_kolA" value="#{PojmoviAsocijacijeBean.kolA}" label="word_kolA" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje KolA"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_kolAMessage"/>
+                                            </p:inputText>
+                                            <br/><br/>
+
+                                        </p:panel>
+                                        <br/>
+
+                                        <p:panel style="height:370px" >
+                                            <h:outputLabel for="fieldsV1" value="V1:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_V1" value="#{PojmoviAsocijacijeBean.v1}" label="word_V1" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje V1"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_V1Message"/>
+                                            </p:inputText>
+                                            <h:message for="fieldsV1" style="color: crimson" id="fieldsV1Message"/>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsV2" value="V2:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_V2" value="#{PojmoviAsocijacijeBean.v2}" label="word_V2" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje V2"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_V2Message"/>
+                                            </p:inputText>
+                                            <h:message for="fieldsV2" style="color: crimson" id="fieldsV2Message"/>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsV3" value="V3:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_V3" value="#{PojmoviAsocijacijeBean.v3}" label="word_V3" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje V3"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_V3Message"/>
+                                            </p:inputText>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsV4" value="V4:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_V4" value="#{PojmoviAsocijacijeBean.v4}" label="word_V4" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje V4"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_V4Message"/>
+                                            </p:inputText>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsKolV" value="KolV:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_kolV" value="#{PojmoviAsocijacijeBean.kolV}" label="word_kolV" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje KolV"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_kolVMessage"/>
+                                            </p:inputText>
+                                            <br/><br/>
+                                        </p:panel>
+
+
+
+                                    </h:panelGroup>
+
+
+                                    <h:panelGroup>
+                                        <p:panel style="height:370px" >
+                                            <h:outputLabel for="fieldsB1" value="B1:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_B1" value="#{PojmoviAsocijacijeBean.b1}" label="word_B1" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje B1"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_B1Message"/>
+                                            </p:inputText>
+                                            <h:message for="fieldsB1" style="color: crimson" id="fieldsB1Message"/>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsB2" value="B2:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_B2" value="#{PojmoviAsocijacijeBean.b2}" label="word_B2" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje B2"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_B2Message"/>
+                                            </p:inputText>
+                                            <h:message for="fieldsB2" style="color: crimson" id="fieldsB2Message"/>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsB3" value="B3:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_B3" value="#{PojmoviAsocijacijeBean.b3}" label="word_B3" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje B3"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_B3Message"/>
+                                            </p:inputText>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsB4" value="B4:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_B4" value="#{PojmoviAsocijacijeBean.b4}" label="word_B4" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje B4"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_B4Message"/>
+                                            </p:inputText>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsKolB" value="KolB:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_kolB" value="#{PojmoviAsocijacijeBean.kolB}" label="word_kolB" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje KolB"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_kolBMessage"/>
+                                            </p:inputText>
+                                            <br/><br/>
+                                        </p:panel>
+                                        <br/>
+
+
+                                        <p:panel style="height:370px" >
+                                            <h:outputLabel for="fieldsG1" value="G1:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_G1" value="#{PojmoviAsocijacijeBean.g1}" label="word_G1" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje G1"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_G1Message"/>
+                                            </p:inputText>
+                                            <h:message for="fieldsG1" style="color: crimson" id="fieldsG1Message"/>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsG2" value="G2:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_G2" value="#{PojmoviAsocijacijeBean.g2}" label="word_G2" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje G2"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_G2Message"/>
+                                            </p:inputText>
+                                            <h:message for="fieldsG2" style="color: crimson" id="fieldsG2Message"/>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsG3" value="G3:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_G3" value="#{PojmoviAsocijacijeBean.g3}" label="word_G3" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje G3"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_G3Message"/>
+                                            </p:inputText>
+                                            <h:message for="fieldsG3" style="color: crimson" id="fieldsG3Message"/>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsG4" value="G4:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_G4" value="#{PojmoviAsocijacijeBean.g4}" label="word_G4" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje G4"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_G4Message"/>
+                                            </p:inputText>
+                                            <h:message for="fieldsG4" style="color: crimson" id="fieldsG4Message"/>
+                                            <br/><br/>
+
+                                            <h:outputLabel for="fieldsKolG" value="KolG:"/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <p:inputText   id="word_kolG" value="#{PojmoviAsocijacijeBean.kolG}" label="word_kolG" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje KolG"  size="15" immediate="true" >
+                                                <f:validateLength minimum="1" maximum="35"/>
+                                                <f:ajax event="blur" render="word_kolGMessage"/>
+                                            </p:inputText>
+                                            <br/><br/>
+                                        </p:panel>
+
+
+
+                                    </h:panelGroup>
+
+                                    <p:panel style="height:70px; " >
+                                        <h:outputLabel for="fieldsKonacno" value="Konacno:"/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <p:inputText   id="word_konacno" value="#{PojmoviAsocijacijeBean.konacno}" label="word_konacno" required="true" placeholder="Unesite vrednost" requiredMessage="Obavezno polje Konacno"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_konacnoMessage"/>
+                                        </p:inputText>
+                                        <br/><br/>
+                                    </p:panel>
+
+
+                                </h:panelGrid><br/>
+
+                                <p:commandButton value="Dalje" update="grid"  style="margin-right:10px"  ajax="false" action="#{PojmoviAsocijacijeBean.cadastrar}"/>
+                            </p:panel>
+                        </h:form>
+
+                    </div>
+                </div>
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+

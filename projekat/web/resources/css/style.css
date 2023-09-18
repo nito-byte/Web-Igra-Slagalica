@@ -1,0 +1,44 @@
+body {margin:0;  font-family:Verdana, Arial, Helvetica, sans-serif; color:#333333;}
+#page {background-color:#FFFFFF; width:1200px; height:1200px; border-top: 15px #709FC9 solid; border-bottom: 8px #709FC9 solid; margin: 0 auto; display:table; padding-bottom:12px;}
+#header {width:1200px;}
+#logo {float:left; width: 190px; border-right: 1px #cccccc solid; padding-bottom: 12px; background-color:#eeeeee}
+#logo h1 {font-size:24px; font-family:"Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; padding:5px 0 0 15px; }
+#logo .tagline {font-size:10px; padding-left: 8px; margin-top:-5px}
+#topnav {float:right;  padding-bottom: 5px;}
+#topnav .menu {width: 120px; float:left; border-bottom: 4px #cccccc solid; margin-right: 10px}
+#topnav .menu_item {padding-top:5px; font-size:20px;}
+#topnav .menu_item a{color:#333333; text-decoration:none;}
+#topnav .menu_item a:hover{color:#FF9900; text-transform:uppercase;}
+#topnav .here{color:#FF9900; text-transform:uppercase; padding-top:5px; font-size:20px;}
+#topnav .menu_desc {font-size:15px;}
+#body {padding: 0 0 0 10px; clear:both}
+#body .post {width: 600px; margin:14px 0; padding:0; display:table}
+#body .post h2 {margin:0; color:#709FC9; letter-spacing:-1px; font-size:25px; font-family:"Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;}
+#body .post p {font-size:14px; margin:0;text-align:justify;}
+#body .post p a{color:#0099FF; text-decoration:none}
+m
+#body .row2 {width:1100px; }
+#body .row1 {width:1200px; }
+
+
+.ui-layout-pane-south {
+    border: 0;
+}.ui-layout-pane {
+    border: 0;
+}
+.ui-layout-unit:not(#mainLU) .ui-layout-unit-content {
+    overflow: hidden;
+}
+#sidebar {float:right; margin:0; width: 500px;}
+#sidebar .sidebar_head { margin-top:40px; padding:12px}
+#sidebar h3{margin:0; color:#709FC9; font-size:25px; font-family:"Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; font-weight:bolder;}
+#sidebar ul {margin:10px 0; padding:0 0 0 25px;}
+#sidebar ul li{ font-size:18px}
+#sidebar ul li a{text-decoration:none; color:#333333}
+#footer {text-align:center}
+#footer p {color:#FFFFFF; font-size:10px;}
+#footer p a{color:#FFFFFF; text-decoration:none}
+#footer p a:hover{color:#FFFFFF; text-decoration:underline}
+.folio_img {margin: 10px 0; text-align:center; width: 80%; background-color:#eeeeee; padding: 10px; border: 1px #cccccc dashed}
+.folio_img img {border: 1px #cccccc solid; padding:4px; background-color:#eeeeee; margin: 10px 10px 0 0}
+.style1 {color: #FF9900}

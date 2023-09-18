@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+    </h:head>
+    <h:body role="document">
+        <ui:composition template="../template.xhtml">
+
+            <ui:define name="top"></ui:define>
+
+            <ui:define name="left">
+                <h:form>
+                    <p:growl autoUpdate="true"/><br></br>
+                    <p:spacer></p:spacer>
+
+                    <p:panelMenu style="width:340px" >
+                        <p:submenu label="Meni" >
+                            <p:menuitem value="Pocetna strana" action="naslovnaStrana.xhtml?faces-redirect=true" icon="ui-icon-back" />
+                        </p:submenu>
+                    </p:panelMenu>
+                </h:form>
+            </ui:define>
+
+
+
+            <ui:define name="content">
+                <div>
+                    <h:form id="form" >  
+                        <p:growl id="msgs" showDetail="true"  />      
+
+                        <h1><h:outputText value="&nbsp;Dobrodosli!" styleClass="menu"/></h1><hr/>
+                        <p:accordionPanel   >
+<!--                            <p:ajax event="tabChange" listener="#{tabbedView.onTabChange}" update=":form" />
+                            <p:ajax event="tabClose" listener="#{tabbedView.onTabClose}"  />-->
+                            <p:ajax event="tabClose" listener="#{tabbedView.onTabClose}" update=":form" />
+
+
+                            
+
+
+
+                            <p:tab title="Godfather Part III">
+
+                                    <h:form >
+                                        <p:panel header="Unesite podatke" >
+
+                                            <h:panelGrid id="grid1" columns="2"  cellpadding="2" >
+
+
+
+                                                <h:outputLabel for="userNamePrijava1" value="Korisnicko ime&nbsp;&nbsp;  "/>
+                                                <p:inputText  id="userNamePrijava1" value="#{RegistracijaBean.username}"  label="userNamePrijava1" required="true" placeholder="Unesite korisnicko ime" requiredMessage="Korisnicko ime je obavezno" validatorMessage="The surname must be between 5 and 80 characters" size="19" immediate="true" >
+                                                    <f:validateLength minimum="5" maximum="80"/>
+                                                    <f:ajax event="blur" render="userNamePrijavaMessage1"/>
+                                                </p:inputText>
+                                                <h:message for="userNamePrijava1" style="color: crimson" id="userNamePrijavaMessage1"/>
+                                                <br/>
+
+                                                <h:outputLabel for="userSurNamePrijava1" value="Lozinka"/>
+                                                <p:inputText  id="userSurNamePrijava1" value="#{RegistracijaBean.password}" label="userSurNamePrijava1" required="true" placeholder="Unesite lozinku" requiredMessage="Lozinka je obavezna"  size="19" immediate="true" >
+
+                                                    <f:validateRegex pattern="^[A-Za-z]((?=.*\d)(?=(.*[a-z]){3,})(?=.*[A-Z])(?=.*[@#$%*^$!]).{8,10})" />
+                                                    <f:ajax event="blur" render="userSurNamePrijavaMessage1"/>
+                                                </p:inputText>
+
+                                                <h:message for="userSurNamePrijava1" style="color: crimson" id="userSurNamePrijavaMessage1"/>
+
+
+
+                                            </h:panelGrid>
+
+                                            <p:commandButton value="Prijavi" update="grid1"   action="#{RegistracijaBean.prijavi()}" style="margin-right:10px">
+                                             <p:resetInput target="grid" />
+                                        </p:commandButton>
+                                        </p:panel>
+
+                                    </h:form>
+                            </p:tab>
+ </p:accordionPanel   >
+  <p:accordionPanel   >
+
+                            <p:tab title="Promena lozinke" >
+                                    <h:form  >
+                                        <h:panelGrid id="grid" columns="2"  cellpadding="4">
+                                           
+
+                                            <h:outputLabel for="userName" value="Name"/>
+                                            <p:inputText   id="userName"  value="#{RegistracijaBean.username}" label="userName" required="true" placeholder="Unesite korisnicko ime" requiredMessage="Korisnicko ime je obavezno" validatorMessage="The name must be between 3 and\n 40 characters" size="19" immediate="true" >
+                                                <f:validateLength minimum="3" maximum="40" />
+                                                <f:ajax event="blur" render="userNameMessage"/>
+                                            </p:inputText>
+                                            <h:message  for="userName" style="color: crimson" id="userNameMessage"/>
+                                            <br/>
+
+                                            <h:outputLabel for="userSurName" value="Lozinka"/>
+                                            <p:inputText  id="userSurName"  value="#{RegistracijaBean.password}" label="userSurName" required="true" placeholder="Unesite lozinku" requiredMessage="Lozinka je obavezna"  size="19" immediate="true" >
+                                                <f:validateRegex pattern="^[A-Za-z]((?=.*\d)(?=(.*[a-z]){3,})(?=.*[A-Z])(?=.*[@#$%*^$!]).{8,10})" />
+
+                                                <f:ajax event="blur" render="userSurNameMessage"/>
+                                            </p:inputText>
+                                            <h:message for="userSurName" style="color: crimson" id="userSurNameMessage"/>
+
+                                            <br/>
+                                            <h:outputLabel for="userSurName1" value="Nova lozinka &nbsp;"/>
+                                            <p:inputText  id="userSurName1" value="#{RegistracijaBean.password1}" label="userSurName1" required="true" placeholder="Potvrdite lozinku" requiredMessage="Potvrda lozinke je obavezna"  size="19" immediate="true" >
+                                                <f:validateRegex pattern="^[A-Za-z]((?=.*\d)(?=(.*[a-z]){3,})(?=.*[A-Z])(?=.*[@#$%*^$!]).{8,10})" />
+
+                                                <f:ajax event="blur" render="userSurNameMessage1"/>
+                                            </p:inputText>
+                                            <h:message for="userSurName1" style="color: crimson" id="userSurNameMessage1"/>
+
+                                        </h:panelGrid>
+
+                                        <p:commandButton  value="Rezervisi" update="grid"  style="margin-right:10px" action="#{RegistracijaBean.promenaLozinke}">
+                                         <p:resetInput target="grid1" />
+                                        </p:commandButton>
+
+                                    </h:form>
+                            </p:tab>
+                        </p:accordionPanel>
+
+
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+

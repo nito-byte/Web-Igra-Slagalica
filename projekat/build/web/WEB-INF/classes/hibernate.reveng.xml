@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="let1"/>
+  <table-filter match-name="PredjiDalje"/>
+  <table-filter match-name="PojmoviSpojnice"/>
+  <table-filter match-name="SinonimiA"/>
+  <table-filter match-name="Pobednici"/>
+  <table-filter match-name="Partija"/>
+  <table-filter match-name="SupervizorOdobri"/>
+  <table-filter match-name="OdigranaIgraDana"/>
+  <table-filter match-name="User"/>
+  <table-filter match-name="SinonimiB"/>
+  <table-filter match-name="PojmoviAsocijacije"/>
+  <table-filter match-name="SinonimiG"/>
+  <table-filter match-name="SinonimiKonacno"/>
+  <table-filter match-name="imagen"/>
+  <table-filter match-name="IgraDana"/>
+  <table-filter match-name="Gramatika"/>
+  <table-filter match-name="SinonimiV"/>
+</hibernate-reverse-engineering>

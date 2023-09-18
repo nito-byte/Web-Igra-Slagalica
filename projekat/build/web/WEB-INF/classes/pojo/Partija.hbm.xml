@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 6, 2019 6:11:43 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Partija" table="Partija" catalog="let1" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="plaviUsername" type="string">
+            <column name="plaviUsername" length="35" />
+        </property>
+        <property name="plaviPoeni" type="java.lang.Integer">
+            <column name="plaviPoeni" />
+        </property>
+        <property name="crveniUsername" type="string">
+            <column name="crveniUsername" length="35" />
+        </property>
+        <property name="crveniPoeni" type="java.lang.Integer">
+            <column name="crveniPoeni" />
+        </property>
+        <property name="ishod" type="string">
+            <column name="Ishod" length="35" />
+        </property>
+        <property name="datumIganja" type="date">
+            <column name="datumIganja" length="0" />
+        </property>
+        <property name="potvrdioCrveni" type="java.lang.Integer">
+            <column name="potvrdioCrveni" />
+        </property>
+        <property name="potvrdionPlavi" type="java.lang.Integer">
+            <column name="potvrdionPlavi" />
+        </property>
+        <property name="aktivnaIgra" type="java.lang.Integer">
+            <column name="aktivnaIgra" />
+        </property>
+    </class>
+</hibernate-mapping>

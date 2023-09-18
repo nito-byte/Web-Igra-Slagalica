@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/let1?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <mapping resource="pojo/Imagen.hbm.xml"/>
+    <mapping resource="pojo/PredjiDalje.hbm.xml"/>
+    <mapping resource="pojo/Partija.hbm.xml"/>
+    <mapping resource="pojo/Gramatika.hbm.xml"/>
+    <mapping resource="pojo/SinonimiA.hbm.xml"/>
+    <mapping resource="pojo/IgraDana.hbm.xml"/>
+    <mapping resource="pojo/SupervizorOdobri.hbm.xml"/>
+    <mapping resource="pojo/User.hbm.xml"/>
+    <mapping resource="pojo/SinonimiB.hbm.xml"/>
+    <mapping resource="pojo/Pobednici.hbm.xml"/>
+    <mapping resource="pojo/SinonimiV.hbm.xml"/>
+    <mapping resource="pojo/SinonimiG.hbm.xml"/>
+    <mapping resource="pojo/PojmoviAsocijacije.hbm.xml"/>
+    <mapping resource="pojo/PojmoviSpojnice.hbm.xml"/>
+    <mapping resource="pojo/SinonimiKonacno.hbm.xml"/>
+    <mapping resource="pojo/OdigranaIgraDana.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

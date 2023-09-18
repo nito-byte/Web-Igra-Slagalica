@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="projekat">
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/web/ucesnik/pregledRezultata.xhtml</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/ucesnici/UcesnikDAOImpl.java</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/web/pocetak/registracija.xhtml</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/web/pocetak/registracijaPotvrda.xhtml</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/ucesnici/UcesnikDAO.java</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/ucesnici/UcesnikBean.java</file>
+        </group>
+        <group>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/web/pocetak/registracijaPotvrda.xhtml</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/web/pocetak/registracija.xhtml</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/web/ucesnik/pregledRezultata.xhtml</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/ucesnici/UcesnikBean.java</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/ucesnici/UcesnikDAO.java</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/ucesnici/UcesnikDAOImpl.java</file>
+        </group>
+        <group name="Group 20190704-02:27:21">
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/ucesnici/UcesnikDAOImpl.java</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/supervizor/SupervizorOdobriDAOImpl.java</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/com/pojmovi_slagalica/PojmoviSlagalicaBean.java</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/web/ucesnik/linkovi.xhtml</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/web/ucesnik/prijavaNaKreiranuPartiju.xhtml</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/ucesnici/UcesnikDAO.java</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/ucesnici/UcesnikBean.java</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/poveziDva/PoveziDvaBean.java</file>
+            <file>file:/home/dell/Desktop/PIA-projekat/ProjekatPIA/src/java/supervizor/SupervizorOdobriDAO.java</file>
+        </group>
+        <group name="Group 20190704-02:28:20">
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/src/java/dvaIgraca/MojBrojBeanDva.java</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraMojbrojDva/igraMojbrojDva.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/src/java/dvaIgraca/DvaIgracaBeanPlavi.java</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraMojbroj/igraDanaMojbroj.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/src/java/ucesnici/UcesnikBean.java</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraSlagalica/igraSlagalicaDvaIgraca.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraSpojnica/igraSpojnicaCrveni.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/src/java/com/pojmovi_spojnica/PojmoviSpojnicaBeanDva.java</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraMojbroj/igraMojbroj.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraSpojnica/igraSpojnicaPlavi.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/src/java/mojbroj/MojBrojBean.java</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraSpojnica/igraSpojnicaDvaDrugi.xhtml</file>
+        </group>
+        <group name="Group 20190706-04:50:29">
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/src/java/dvaIgraca/MojBrojBeanDva.java</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/src/java/dvaIgraca/DvaIgracaBeanPlavi.java</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/src/java/ucesnici/UcesnikBean.java</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraSlagalica/igraSlagalicaDvaIgraca.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/src/java/mojbroj/MojBrojBean.java</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraMojbroj/igraMojbroj.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraMojbroj/igraDanaMojbroj.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraSpojnica/igraSpojnicaCrveni.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraSpojnica/igraSpojnicaPlavi.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraMojbrojDva/igraMojbrojDva.xhtml</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/src/java/com/pojmovi_spojnica/PojmoviSpojnicaBeanDva.java</file>
+            <file>file:/home/dell/Desktop/Kopije/petak1/ProjekatPIA/web/igraSpojnica/igraSpojnicaDvaDrugi.xhtml</file>
+        </group>
+        <group name="Menjam">
+            <file>file:/home/dell/Desktop/SALJEEEEEM/ProjekatPIA/src/java/com/pojmovi_slagalica/CekamSupervizoraBean.java</file>
+            <file>file:/home/dell/Desktop/SALJEEEEEM/ProjekatPIA/web/igraAsocijacije/igraDanaAsocijacija.xhtml</file>
+            <file>file:/home/dell/Desktop/SALJEEEEEM/ProjekatPIA/src/java/com/pojmovi_spojnica/PojmoviSpojnicaDAOImpl.java</file>
+            <file>file:/home/dell/Desktop/SALJEEEEEM/ProjekatPIA/web/ucesnik/linkovi.xhtml</file>
+        </group>
+    </open-files>
+</project-private>

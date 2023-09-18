@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:o="http://omnifaces.org/ui">
+    <h:head>
+    </h:head>
+    <h:body role="document">
+        <ui:composition template="../template.xhtml">
+
+            <ui:define name="top"></ui:define>
+
+            <ui:define name="left">
+                <h:form>
+                    <p:growl autoUpdate="true"/><br></br>
+                    <p:spacer></p:spacer>
+
+                    <p:panelMenu style="width:340px" >
+                        <p:submenu label="Meni" >
+                            <p:menuitem value="Izloguj se" action="#{UcesnikBean.logout()}" icon="ui-icon-back" />
+                            <p:menuitem value="Povratak" action="linkovi.xhtml?faces-redirect=true" icon="ui-icon-back" />
+                        </p:submenu>
+                    </p:panelMenu>
+                </h:form>
+            </ui:define>
+
+
+
+            <ui:define name="content">
+
+                <h:form >
+                    <p:menubar >
+
+                        <p:menuitem value="Slagalica" icon="ui-icon-circle-plus" ajax="true"  url="unosSlagalica.xhtml"/>
+                        <p:menuitem value="Spojnica" icon="ui-icon-circle-plus" ajax="true"  url="unosSpojnica.xhtml"/>
+                        <p:menuitem value="Asocijacije" icon="ui-icon-circle-plus" ajax="true"  url="unosAsocijacije.xhtml"/>
+
+                    </p:menubar>
+                </h:form>
+
+
+                <div class="container" >
+                    <div class="row">
+
+
+                        <h:form >
+                            <p:panel header="Unesite podatke" >
+                                <!--                                <p:messages autoUpdate="true"/>-->
+
+                                <h:panelGrid id="grid"  cellpadding="3"  >
+
+                                    <p:panel  >
+                                        <h:outputLabel for="firstPair" value="Prvi par:"/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <p:inputText   id="word_1_1" value="#{UbaciPojmoviSpojnicaBean.polje11}" label="word_1_1" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 1.1"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_1_1Message"/>
+                                        </p:inputText>
+                                        &nbsp;
+                                        <p:inputText   id="word_1_2" value="#{UbaciPojmoviSpojnicaBean.polje12}" label="word_1_2" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 1.2"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_1_2Message"/>
+                                        </p:inputText>
+                                        <h:message for="firstPair" style="color: crimson" id="firstPairMessage"/>
+                                    </p:panel>
+
+
+
+
+                                    <p:panel>
+                                        <h:outputLabel for="secondWord" value="Drugi par:"/>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <p:inputText   id="word_2_1" value="#{UbaciPojmoviSpojnicaBean.polje21}" label="word_2_1" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 2.1"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_2_1Message"/>
+                                        </p:inputText>
+                                        &nbsp;
+                                        <p:inputText   id="word_2_2" value="#{UbaciPojmoviSpojnicaBean.polje22}" label="word_2_2" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 2.2"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_2_2Message"/>
+                                        </p:inputText>
+                                        <h:message for="secondWord" style="color: crimson" id="secondWordMessage"/>
+                                    </p:panel>
+
+
+
+                                    <p:panel>
+                                        <h:outputLabel for="thirdWord" value="Treci par:"/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <p:inputText   id="word_3_1" value="#{UbaciPojmoviSpojnicaBean.polje31}" label="word_3_1" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 3.1"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_3_1Message"/>
+                                        </p:inputText>
+                                        &nbsp;
+                                        <p:inputText   id="word_3_2" value="#{UbaciPojmoviSpojnicaBean.polje32}" label="word_3_2" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 3.2"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_3_2Message"/>
+                                        </p:inputText>
+                                        <h:message for="thirdWord" style="color: crimson" id="thirdMessage"/>
+                                    </p:panel>
+
+
+
+
+                                    <p:panel>
+                                        <h:outputLabel for="fourthWord" value="Cetvrti par:"/>
+                                        &nbsp;
+                                        <p:inputText   id="word_4_1" value="#{UbaciPojmoviSpojnicaBean.polje41}" label="word_4_1" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 4.1"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_4_1Message"/>
+                                        </p:inputText>
+                                        &nbsp;
+                                        <p:inputText   id="word_4_2" value="#{UbaciPojmoviSpojnicaBean.polje42}" label="word_4_2" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 4.2"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_4_2Message"/>
+                                        </p:inputText>
+                                        <h:message for="fourthWord" style="color: crimson" id="fourthWordMessage"/>
+                                    </p:panel>
+
+
+
+                                    <p:panel>
+                                        <h:outputLabel for="fifthWord" value="Peti par:"/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <p:inputText   id="word_5_1" value="#{UbaciPojmoviSpojnicaBean.polje51}" label="word_5_1" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 5.1"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_5_1Message"/>
+                                        </p:inputText>
+                                        &nbsp;
+                                        <p:inputText   id="word_5_2" value="#{UbaciPojmoviSpojnicaBean.polje52}" label="word_5_2" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 5.2"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_5_2Message"/>
+                                        </p:inputText>
+                                        <h:message for="fifthWord" style="color: crimson" id="fifthWordMessage"/>
+                                    </p:panel>
+
+
+
+                                    <p:panel>
+                                        <h:outputLabel for="sixthWord" value="Sesti par:"/>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <p:inputText   id="word_6_1" value="#{UbaciPojmoviSpojnicaBean.polje61}" label="word_6_1" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 6.1"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_6_1Message"/>
+                                        </p:inputText>
+                                        &nbsp;
+                                        <p:inputText   id="word_6_2" value="#{UbaciPojmoviSpojnicaBean.polje62}" label="word_6_2" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 6.2"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_6_2Message"/>
+                                        </p:inputText>
+                                        <h:message for="sixthWord" style="color: crimson" id="sixthWordMessage"/>
+                                    </p:panel>
+
+
+
+                                    <p:panel>
+                                        <h:outputLabel for="seventhWord" value="Sedmi par:"/>
+                                        &nbsp;
+                                        <p:inputText   id="word_7_1" value="#{UbaciPojmoviSpojnicaBean.polje71}" label="word_7_1" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 7.1"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_7_1Message"/>
+                                        </p:inputText>
+                                        &nbsp;
+                                        <p:inputText   id="word_7_2" value="#{UbaciPojmoviSpojnicaBean.polje72}" label="word_7_2" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 7.2"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_7_2Message"/>
+                                        </p:inputText>
+                                        <h:message for="seventhWord" style="color: crimson" id="seventhWordMessage"/>
+                                    </p:panel>
+
+
+
+                                    <p:panel>
+                                        <h:outputLabel for="eightWord" value="Osmi par:"/>
+                                        &nbsp;&nbsp;
+                                        <p:inputText   id="word_8_1" value="#{UbaciPojmoviSpojnicaBean.polje81}" label="word_8_1" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 8.1"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_8_1Message"/>
+                                        </p:inputText>
+                                        &nbsp;
+                                        <p:inputText   id="word_8_2" value="#{UbaciPojmoviSpojnicaBean.polje82}" label="word_8_2" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 8.2"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_8_2Message"/>
+                                        </p:inputText>
+                                        <h:message for="eightWord" style="color: crimson" id="eightWordMessage"/>
+                                    </p:panel>
+
+
+
+
+                                    <p:panel>
+                                        <h:outputLabel for="ninethWord" value="Deveti par:"/>
+                                        &nbsp;
+                                        <p:inputText   id="word_9_1" value="#{UbaciPojmoviSpojnicaBean.polje91}" label="word_9_1" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 9.1"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_9_1Message"/>
+                                        </p:inputText>
+                                        &nbsp;
+                                        <p:inputText   id="word_9_2" value="#{UbaciPojmoviSpojnicaBean.polje92}" label="word_9_2" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 9.2"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_9_2Message"/>
+                                        </p:inputText>
+                                        <h:message for="ninethWord" style="color: crimson" id="ninethWordMessage"/>
+                                    </p:panel>
+
+
+
+                                    <p:panel>
+                                        <h:outputLabel for="tenthWord" value="Deseti par:"/>
+                                        &nbsp;
+                                        <p:inputText   id="word_10_1" value="#{UbaciPojmoviSpojnicaBean.polje101}" label="word_10_1" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 10.1"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_10_1Message"/>
+                                        </p:inputText>
+                                        &nbsp;
+                                        <p:inputText   id="word_10_2" value="#{UbaciPojmoviSpojnicaBean.polje102}" label="word_10_2" required="true" placeholder="Unesite ime" requiredMessage="Obavezno polje 10.2"  size="15" immediate="true" >
+                                            <f:validateLength minimum="1" maximum="35"/>
+                                            <f:ajax event="blur" render="word_10_2Message"/>
+                                        </p:inputText>
+                                        <h:message for="tenthWord" style="color: crimson" id="tenthWordMessage"/>
+                                    </p:panel>
+
+                                </h:panelGrid><br/>
+
+                                <p:commandButton value="Dalje" update="grid"  style="margin-right:10px"  ajax="false" action="#{UbaciPojmoviSpojnicaBean.cadastrar}"/>
+                            </p:panel>
+                        </h:form>
+
+                    </div>
+                </div>
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+

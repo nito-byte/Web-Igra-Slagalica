@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 6, 2019 6:11:43 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.PojmoviSpojnice" table="PojmoviSpojnice" catalog="let1" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="polje11" type="string">
+            <column name="polje11" length="45" />
+        </property>
+        <property name="polje12" type="string">
+            <column name="polje12" length="45" />
+        </property>
+        <property name="polje21" type="string">
+            <column name="polje21" length="45" />
+        </property>
+        <property name="polje22" type="string">
+            <column name="polje22" length="45" />
+        </property>
+        <property name="polje31" type="string">
+            <column name="polje31" length="45" />
+        </property>
+        <property name="polje32" type="string">
+            <column name="polje32" length="45" />
+        </property>
+        <property name="polje41" type="string">
+            <column name="polje41" length="45" />
+        </property>
+        <property name="polje42" type="string">
+            <column name="polje42" length="45" />
+        </property>
+        <property name="polje51" type="string">
+            <column name="polje51" length="45" />
+        </property>
+        <property name="polje52" type="string">
+            <column name="polje52" length="45" />
+        </property>
+        <property name="polje61" type="string">
+            <column name="polje61" length="45" />
+        </property>
+        <property name="polje62" type="string">
+            <column name="polje62" length="45" />
+        </property>
+        <property name="polje71" type="string">
+            <column name="polje71" length="45" />
+        </property>
+        <property name="polje72" type="string">
+            <column name="polje72" length="45" />
+        </property>
+        <property name="polje81" type="string">
+            <column name="polje81" length="45" />
+        </property>
+        <property name="polje82" type="string">
+            <column name="polje82" length="45" />
+        </property>
+        <property name="polje91" type="string">
+            <column name="polje91" length="45" />
+        </property>
+        <property name="polje92" type="string">
+            <column name="polje92" length="45" />
+        </property>
+        <property name="polje101" type="string">
+            <column name="polje101" length="45" />
+        </property>
+        <property name="polje102" type="string">
+            <column name="polje102" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

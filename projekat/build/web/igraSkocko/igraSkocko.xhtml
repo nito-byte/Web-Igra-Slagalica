@@ -1,0 +1,466 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <style type="text/css">
+            .jedno-polje {
+                display: inline-block;
+                background-color: #bef0ff;
+                background-size: contain;
+                width: 50px;
+                height: 50px;
+                border-radius: 8px;
+            }
+        </style>
+
+    </h:head>
+    <h:body role="document" >
+
+        <!-- DRUGACIJI MI JE IZGLED STRANICE KAD IGRAM-->
+        <ui:composition template="../templateOne.xhtml">
+
+            <ui:define name="top"></ui:define>
+
+
+            <ui:define name="content" >
+                <div id="c"  style="width:99%; ">
+                    <h1><h:outputText value="Slagalica"/></h1><hr/>
+
+
+                    <p:panel header="Izbor" style="background-color: lightgoldenrodyellow;">
+                        <p:messages autoUpdate="true"/>
+
+
+
+                        <h:form id="ram">
+                            <table>
+                                <tr>
+                                    <td> PLAVI
+                                        <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                              margin-right:1000px ; width:90px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                              background-color: lightgoldenrodyellow;" >#{SkockoBean.osvojeniBodovi}</div>
+                                    </td>
+
+                                </tr>
+                            </table>
+                            <br/><br/>
+
+
+                            <!-- PONUDJENA POLJA ************** -->
+                            <h:outputText value="Ponudjeni znaci: " style="font-family: Gill; font:normal 180%/120% fantasy ; "/>
+
+                            <div style="margin: auto; top: 40%; width: 65%;">
+                                <table >
+                                    <tr>
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{SkockoBean.znaci(0)}" >
+
+                                                <h:graphicImage value="/resources/skocko/tref.png" 
+                                                                style="width: 30px; height: 30px;">
+                                                    <f:ajax event="click" render="ram" listener="#{SkockoBean.dohvati('tref')}"></f:ajax>
+                                                </h:graphicImage>
+
+                                            </div> 
+                                        </td>
+
+
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{SkockoBean.znaci(1)}" >
+
+                                                <h:graphicImage value="/resources/skocko/zvijezda.png" 
+                                                                style="width: 30px; height: 30px;">
+                                                    <f:ajax event="click" render="ram" listener="#{SkockoBean.dohvati('zvezda')}" />
+                                                </h:graphicImage>
+
+                                            </div> 
+                                        </td>
+
+
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{SkockoBean.znaci(2)}" >
+
+                                                <h:graphicImage value="/resources/skocko/pik.png" 
+                                                                style="width: 30px; height: 30px;">
+                                                    <f:ajax event="click" render="ram"  listener="#{SkockoBean.dohvati('pik')}"/>
+                                                </h:graphicImage>
+
+                                            </div> 
+                                        </td>
+
+
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{SkockoBean.znaci(3)}" >
+
+                                                <h:graphicImage value="/resources/skocko/karo.png" 
+                                                                style="width: 30px; height: 30px;">
+                                                    <f:ajax event="click" render="ram"  listener="#{SkockoBean.dohvati('karo')}" />
+                                                </h:graphicImage>
+
+                                            </div> 
+                                        </td>
+
+
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{SkockoBean.znaci(4)}" >
+
+                                                <h:graphicImage value="/resources/skocko/herc.png" 
+                                                                style="width: 30px; height: 30px;">
+                                                    <f:ajax event="click" render="ram"  listener="#{SkockoBean.dohvati('herc')}" />
+                                                </h:graphicImage>
+
+                                            </div> 
+                                        </td>
+
+
+
+                                        <td>
+                                            <div  style="backface-visibility: visible; font-family: Gill; font:normal 220%/120% fantasy ; 
+                                                  width:50px; height:50px;border: solid;text-align: center;border-color: darkgray;
+                                                  background-color: lightgoldenrodyellow; pointer-events:#{SkockoBean.znaci(5)}" >
+
+                                                <h:graphicImage value="/resources/skocko/sova.png" 
+                                                                style="width: 30px; height: 30px;">
+                                                    <f:ajax event="click" render="ram"  listener="#{SkockoBean.dohvati('sova')}"/>
+                                                </h:graphicImage>
+
+                                            </div> 
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+                            </div>
+                            <br/>
+                            <br/>
+
+
+
+
+                            <!-- ******************************************************************************************************************************* -->                            
+
+
+
+                            <!-- Glavni panel (6 redova) -->
+                            <div style="width: 400px;
+                                 display: inline-block;">
+                                <!-- Red 0 -->
+                                <div >
+                                    <div >
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[0][0]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[0][1]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[0][2]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[0][3]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+
+
+
+                                <div >
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[0][0]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[0][1]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[0][2]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[0][3]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Red 1 -->
+                            <div>
+                                <div >
+                                    <div >
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[1][0]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[1][1]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[1][2]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[1][3]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                                <div >
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[1][0]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[1][1]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[1][2]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[1][3]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Red 2 -->
+                            <div >
+                                <div >
+                                    <div >
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[2][0]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[2][1]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[2][2]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[2][3]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div >
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[2][0]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[2][1]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[2][2]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[2][3]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Red 3 -->
+                            <div >
+                                <div >
+                                    <div >
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[3][0]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[3][1]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[3][2]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[3][3]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div >
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[3][0]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[3][1]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[3][2]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[3][3]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Red 4 -->
+                            <div >
+                                <div >
+                                    <div >
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[4][0]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[4][1]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[4][2]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[4][3]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div >
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[4][0]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[4][1]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[4][2]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[4][3]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Red 5 -->
+                            <div >
+                                <div >
+                                    <div >
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[5][0]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[5][1]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[5][2]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.odgovori[5][3]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div >
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[5][0]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[5][1]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[5][2]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+
+                                    <div style="display: inline-block;width: 30px;height: 30px;border-radius: 50%;background-color: #245ea6;">
+                                        <h:graphicImage value="#{SkockoBean.rezultat[5][3]}" style="width: 30px; height: 30px;"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Resenje ako nisam pogodila -->
+                            <h:outputText value="Tacno resenje:"/>
+                            <div >
+                                <div >
+                                    <div >
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.tacanOdgovor[0]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.tacanOdgovor[1]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.tacanOdgovor[2]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+                                        <div style="display: inline-block; background-color: #bef0ff;background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                            <h:graphicImage value="#{SkockoBean.tacanOdgovor[3]}" style="width: 30px; height: 30px;"/>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <br></br>
+                            <br></br>
+
+
+
+                            <div class="potvrda">
+                                <div style="display: inline-block; background-size: contain; width: 50px;height: 50px;border-radius: 8px;">
+                                    <h:commandButton value="Dalje" action="/igraSpojnica/igraSpojnica.xhtml?faces-redirect=true"></h:commandButton>
+                                </div>
+                            </div>
+
+                            <!--                            </div>-->
+                        </h:form>
+                        <!--                        </h:panelGrid>-->
+                    </p:panel>
+                </div>
+
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+
